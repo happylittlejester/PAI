@@ -1,0 +1,53 @@
+.header
+{
+    top: 0;
+    height: 7%;
+    width: 100%;
+    background-color: navy;
+    color: white;
+    text-align: center;
+    font-size: 70;
+}
+
+.main
+{
+    background-color: lightblue;
+    height: 88%;
+    width: 100%;
+    text-align: center;
+}
+
+img
+{
+    height: 330px;
+    width: 430px;
+    border: 3px black dotted;
+}
+
+p
+{
+    text-align: justify;
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1em;
+    position: absolute;
+    left: 25%;
+}
+
+button
+{
+    position: absolute;
+    bottom: 100px;
+}
+
+.footer
+{
+    bottom: 0px;
+    height: 5%;
+    width: 100%;
+    background-color: navy;
+    color: white;
+    font-size: medium;
+    text-align: center;
+    font-size: 20;
+}
