@@ -1,105 +1,36 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title>Stronka</title>
+        <title>Funkcje</title>
     </head>
     <body>
+        <form method=POST>
+            <input type="number" name="wiek" />
+            <input type="submit" />
+        </form>
         <?php
-            //tablice jednowymiarowe
-            /*
-            $books[] = "Tytul1";
-            $books[] = "Tytul2";
-            $books[] = "Tytul3";
-            $books[] = "Tytul4";
-        
-            for($i = 3; $i >= 0; $i--)
+            function sprawdzWiek($wiek)
             {
-                echo "$i: $books[$i] <br>";
-            }
-
-            echo "<br>";
-
-            $tab['ksiazka'] = "tytuł ksiazki";
-            $tab['piosenka'] = "tytuł piosenki";
-            $tab['serial'] = "tytuł serialu";
-            $tab['film'] = "tytuł filmu";
-
-            echo $tab['ksiazka'];
-            echo "<br>";
-            echo $tab['film'];
-            */
-
-            //tablice wielowymiarowe
-            /*
-            $products = array(
-                'paper' => array(
-                    'copier' => "Do kserokopiarek i uniwersalny",
-                    'inkjet' => "Do drukarek atramentowych",
-                    'laser' => "Do drukarek laserowych",
-                    'photo' => "Papier fotograficzny"),
-                'pens' => array(
-                    'ball' => "Długopisy",
-                    'hilite' => "Markery przezroczyste",
-                    'marker' => "Markery zwykłe"),
-                'misc' => array(
-                    'tape' => "Taśmy klejące",
-                    'glue' => "Kleje",
-                    'clips' => "Spinacze")
-                );
-            
-            echo "<pre>";
-            foreach($products as $section => $items)
-                foreach($items as $key => $value)
-                    if($key == 'copier' || $key == 'ball' || $key == 'tape')
-                    {
-                        echo "$section: \t $key \t ($value)<br>";
-                    }
-            echo "</pre>";  
-            
-            /*echo $products['paper']['copier'];
-            echo "<br>";
-            echo $products['pens']['ball'];
-            echo "<br>";
-            echo $products['misc']['tape'];*/
-
-            echo "<br>";
-            
-            
-            $chessboard = array(
-                array('w','s','g','h','k','g','s','w'),
-                array('p','p','p','p','p','p','p','p'),
-                array(' ',' ',' ',' ',' ',' ',' ',' '),
-                array(' ',' ',' ',' ',' ',' ',' ',' '),
-                array(' ',' ',' ',' ',' ',' ',' ',' '),
-                array(' ',' ',' ',' ',' ',' ',' ',' '),
-                array('P','P','P','P','P','P','P','P'),
-                array('W','S','G','H','K','G','S','W'),
-            );
-            echo "<pre>";
-            foreach($chessboard as $row)
-            {
-                foreach($row as $piece)
+                if($wiek < 18)
                 {
-                    echo "$piece ";
+                    echo " Jestes Mlody";
                 }
-                echo "<br>";
-            }
-            echo "</pre>"; 
-
-            $chessboard[6][4] = ' ';
-            $chessboard[5][4] = 'P';
-
-            echo "<br>";
-            echo "<pre>";
-            foreach($chessboard as $row)
-            {
-                foreach($row as $piece)
+                else if($wiek >= 18 && $wiek < 60)
                 {
-                    echo "$piece ";
+                    echo " Jestes Dorosly";
                 }
-                echo "<br>";
+                else
+                {
+                    echo " Jestes Stary";
+                }
+            };
+
+            if(isset($_POST['wiek']))
+            {
+                echo "Masz " . (int)$_POST['wiek'] . " lata.";
             }
-            echo "</pre>"; 
+            sprawdzWiek($_POST['wiek']);
         ?>
+        
     </body>
 </html>
