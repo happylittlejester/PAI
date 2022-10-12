@@ -108,5 +108,44 @@
         ?>
         <hr>
         <form method = "POST">
+            Wybierz gre:
+            <select name="gra">
+            <option value="Minecraft">Minecraft</option>
+            <option value="Terraria">Terraria</option>
+            <option value="CSGO">CSGO</option>
+            </select>
+            Wpisz liczbe godzin:
+            <input type="number" name="hours" required />
+            <input type="submit" />
+        </form>
+        <?php
+            if(isset($_POST['gra']) && isset($_POST['hours']))
+            {
+                if($_POST['gra'] == 'Minecraft' && $_POST['hours'] < 100)
+                {
+                    echo "Poczatkujacy w grze ".$_POST['gra'];
+                }
+                else if($_POST['gra'] == 'Minecraft' && $_POST['hours'] >= 100)
+                {
+                    echo "Zaawansowany w grze ".$_POST['gra'];
+                }
+                else if($_POST['gra'] == 'Terraria' && $_POST['hours'] < 100)
+                {
+                    echo "Poczatkujacy w grze ".$_POST['gra'];
+                }
+                else if($_POST['gra'] == 'Terraria' && $_POST['hours'] >= 100)
+                {
+                    echo "Zaawansowany w grze ".$_POST['gra'];
+                }
+                else if($_POST['gra'] == 'CSGO' && $_POST['hours'] < 100)
+                {
+                    echo "Poczatkujacy w grze ".$_POST['gra'];
+                }
+                else
+                {
+                    echo "Zaawansowany w grze ".$_POST['gra'];
+                }
+            }
+        ?>
     </body>
 </html>
