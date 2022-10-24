@@ -17,22 +17,7 @@
                 session_unset();
                 session_destroy();
             }
-
-            echo "<br>Tablica nr: ";
-            print_r($_SESSION["tab1"]);
-            echo "<br>Tablica text: ";
-            print_r($_SESSION["tab2"]);
         ?>
-        <form method="POST">
-            <input type="number" />
-            <input type="submit" value="dodaj" />
-        </form>
-        <form method="POST">
-            <input type="text" />
-            <input type="submit" value="dodaj" />
-        </form>
-        <?php
-            
-        ?>
+        
     </body>
 </html>

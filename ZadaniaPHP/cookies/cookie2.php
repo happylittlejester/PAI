@@ -5,7 +5,7 @@
         </form>
         <?php
             $cookie_name = "user";
-            $cookie_value = "Alex Porter";
+            $cookie_value = "John Doe";
 
             if(!isset($_COOKIE['user'])) {
                 echo "Cookie named '" . $_COOKIE['user'] . "' is not set!";
@@ -15,12 +15,21 @@
                 echo "Cookie '" . $_COOKIE['user'] . "' is set!<br>";
                 echo "Value is: " . $_COOKIE['user'];
             }
+
+            if(count($_COOKIE) > 0) 
+            {
+                echo "<br>Cookies are enabled.";
+            } 
+            else 
+            {
+                echo "<br>Cookies are disabled.";
+            }
+
             if(isset($_POST['usun']))
             {
-                echo "Cookie 'user' is deleted.";
+                echo "<br>Cookie 'user' is deleted.";
                 setcookie("user", "", time() - 3600);
             }
         ?>
-
     </body>
 </html>
